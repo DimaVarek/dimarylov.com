@@ -1,0 +1,50 @@
+.education-container {
+    height: fit-content;
+    width: 60vw;
+    padding: 10px;
+    background-color: #ECE4D8;
+    font-size: x-large;
+    overflow: auto;
+}
+.education-step-name {
+    font-size: xx-large;
+}
+.education-step-content {
+    font-size: x-large;
+}
+.MuiTimeLineItem-root {
+    align-items: start;
+}
+.education-card-title {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 25px;
+}
+.card-content {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+.MuiCard-root:hover {
+    box-shadow: 5px 5px 10px #5B5B5B;
+}
+.MuiTimelineItem-root {
+    position: static;
+}
+.ed-link {
+    text-decoration: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient( 
+            to right, #f32170, #ff6b08, 
+             #cf23cf); 
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    transition: all 0.5s ease-out;
+}
+.ed-link:hover {
+    background: linear-gradient( 
+            to right, #cf23cf, #f32170, #ff6b08
+             );
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}

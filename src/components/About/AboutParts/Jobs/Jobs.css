@@ -1,0 +1,36 @@
+.job-container {
+    height: fit-content;
+    width: 60vw;
+    padding: 10px;
+    background-color: #ECE4D8;
+    font-size: x-large;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+.job-card-container {
+    width: 50%;
+    min-width: 150px;
+    display: flex;
+}
+.job-card-container > .MuiPaper-root {
+    width: 80%;
+    text-align: center;
+    font-size: medium;
+}
+.job-card-inner {
+    padding: 10px;
+}
+.job-card-position {
+    font-size: x-large;
+}
+.job-card-company {
+    font-size: large;
+}
+.job-card-dates {
+    font-size: large;
+}
+.job-card-description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,20 @@
+.about-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10vh;
+    padding-bottom: 10vh;
+    background-color: #cfcfcf;
+}
+.about-title {
+    font-size: 7vh;
+    color: rgb(155, 23, 23);
+    text-shadow: 7px 7px 10px #5B5B5B;
+    transition: all 0.3s ease-out;
+}
+.about-title:hover {
+    color: rgb(228, 38, 38);
+    text-shadow: 7px 7px 10px #ECE4D8;
+}

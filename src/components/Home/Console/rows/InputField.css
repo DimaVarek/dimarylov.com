@@ -1,0 +1,29 @@
+.console-row {
+    display: flex;
+    gap: 1vw;
+}
+.list {
+    display: block;
+}
+.error {
+    color: red;
+}
+.input-field {
+    display: flex;
+    gap: 1vw;
+}
+.input-field > input {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #1eff00;
+    font-size: x-large;
+    border: none;
+    outline: none;
+    width: 80%;
+    caret-color: #1eff00;
+}
+.location-span {
+    display: block;
+}

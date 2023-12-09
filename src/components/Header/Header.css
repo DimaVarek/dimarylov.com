@@ -1,9 +1,19 @@
 .header-container {
     height: 7vh;
+    width: 100%;
     display: flex;
+    justify-content: center;
     padding: 1.5vh;
     gap: 1.5vh;
     position: fixed;
+    transition: all .3s ease;
+    z-index: 50;
+}
+.header-container.header_hidden {
+	transform: translateY(-100%);
+}
+.header-container > a {
+    text-decoration: none;
 }
 .header-item {
     display: flex;
@@ -14,8 +24,9 @@
     font-size:x-large;
     background-color: #ECE4D8;
     gap: 2vh;
+    color: black;
     transition: all 0.3s ease-out;
-    border: 1px solid #4D4D4D;
+    /* border: 1px solid #4D4D4D; */
     box-shadow: 7px 7px 10px #5B5B5B;
 }
 .header-item:hover {

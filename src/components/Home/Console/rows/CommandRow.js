@@ -3,8 +3,8 @@ import LocationSpan from "./LocationSpan";
 function CommandRow({message}) {
     return ( 
         <div className="console-row">
-            <LocationSpan location={message.location} />
             <div>
+                <LocationSpan location={message.location} />
                 {message.text}
             </div>
         </div>

@@ -31,7 +31,7 @@ function Jobs() {
         }
     ]
     return ( 
-        <Frame windowName={"Jobs"}>
+        <Frame windowName={"Jobs"} id="jobs">
             <div className="job-container">
                 {jobPlases.map(jobInfo => <JobCard jobInfo={jobInfo} separator={jobInfo.end}/>)}
             </div>

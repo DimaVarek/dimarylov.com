@@ -15,13 +15,14 @@ const responseTypes = {
     SHOWINFOMESSAGE: 1,
     SHOWINFOLIST: 2,
     SHOWERROR: 3,
-    SHOWCOMPONENT: 4
+    SHOWCOMPONENT: 4,
 }
 
 const commandTypes = {
     cd: "cd",
     ls: 'ls',
-    source: "source"
+    open: "open",
+    help: "help"
 }
 
 class FileResponse {

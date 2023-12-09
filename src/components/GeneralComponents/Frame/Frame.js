@@ -1,9 +1,9 @@
 import './Frame.css'
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import CloseIcon from '@mui/icons-material/Close';
-function Frame({children, windowName}) {
+function Frame({children, windowName, id}) {
     return ( 
-        <div className="frame-container">
+        <div className="frame-container" id={id}>
             <div className="frame-header">
                 <div className='frame-header-left'>
                     {windowName}

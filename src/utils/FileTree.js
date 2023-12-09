@@ -29,6 +29,12 @@ class Folder {
     }
     ls () {
         let response = []
+        if (this.father) {
+            response.push({
+                nodeType: nodeTypes.FOLDER,
+                name: ".."
+            })
+        }
         this.childrenFolders.forEach(folder => response.push({
             nodeType: nodeTypes.FOLDER,
             name: folder.name
@@ -40,7 +46,14 @@ class Folder {
         return new FileResponse(responseTypes.SHOWINFOLIST, {list: response}) 
     }
     open (fileName) {
-        return new FileResponse(responseTypes.SHOWCOMPONENT, {component: "1"})
+        let index = this.childrenFiles.findIndex(file => file.name === fileName)
+        if (index === -1) {
+            index = this.childrenFolders.findIndex(file => file.name === fileName)
+            if (index === -1) {
+                return new FileResponse(responseTypes.SHOWERROR, {message: "This file or folder doesn't exist in current dirrectory"})
+            }
+        }
+        return new FileResponse(responseTypes.SHOWCOMPONENT, {component: fileName})
     }
 }
 
@@ -78,8 +91,27 @@ class Tree {
             return response
         } else if (request[0] == commandTypes.ls && request.length === 1) {
             return this.currentNode.ls()
-        } else if (request[0] == commandTypes.open) {
+        } else if (request[0] == commandTypes.open && request.length === 2) {
             return this.currentNode.open(request[1])
+        } else if (request[0] == commandTypes.help) {
+            return new FileResponse(responseTypes.SHOWINFOLIST, {list: [
+                {
+                    nodeType: nodeTypes.FILE,
+                    name: 'ls - Lists files and directories in the current directory.'
+                },
+                {
+                    nodeType: nodeTypes.FILE,
+                    name: 'cd - Changes the current directory.'
+                },
+                {
+                    nodeType: nodeTypes.FILE,
+                    name: 'help - Provides information and guidance on using commands in the command line.'
+                },
+                {
+                    nodeType: nodeTypes.FILE,
+                    name: 'open - Opens the specified directory or file.'
+                },
+            ]})
         }
         else {
             return new FileResponse(responseTypes.SHOWERROR, {message: "Sorry bro, I didn't get it"}) 
@@ -89,9 +121,9 @@ class Tree {
 
 let contacts = new File('contacts', "")
 
-let project1 = new File('project1', "")
-let project2 = new File('project2', "")
-let project3 = new File('project3', "")
+let project1 = new File('job-ninja', "")
+let project2 = new File('hangman', "")
+let project3 = new File('diploma', "")
 
 let summary = new File('summary', "")
 let education = new File('education', "")
@@ -103,4 +135,4 @@ let projects = new Folder('projects', {childrenFiles : [project1, project2, proj
 let home = new Folder('home', {childrenFiles : [contacts], childrenFolders : [about, projects]})
 
 const FilesTree = new Tree(home);
-export default FilesTree; 
+export default FilesTree;

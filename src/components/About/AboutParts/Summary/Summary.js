@@ -1,11 +1,10 @@
 import Frame from "../../../GeneralComponents/Frame/Frame";
 import './Summary.css'
 import logo from './Huy420.gif';
-import { Card } from "@mui/material";
 
 function Summary() {
     return ( 
-        <Frame windowName={"Summary"}>
+        <Frame windowName={"Summary"} id="summary">
             <div className="summary-container">
                 <div className="summary-text">
                     <div className="summary-text-inner">

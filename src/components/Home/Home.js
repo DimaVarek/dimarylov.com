@@ -4,7 +4,7 @@ import './Home.css';
 
 function Home() {
     return ( 
-        <div className="home-container">
+        <div className="home-container" id="home">
             <Frame windowName={"Console"}>
                 <Console />
             </Frame>

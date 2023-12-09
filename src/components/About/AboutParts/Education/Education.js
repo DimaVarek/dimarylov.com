@@ -1,6 +1,6 @@
 import Frame from "../../../GeneralComponents/Frame/Frame";
 import './Education.css';
-import Timeline from '@mui/lab/Timeline';
+import Timeline, {timelineClasses} from '@mui/lab/Timeline';
 import TimelineItem, {timelineItemClasses} from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
@@ -21,15 +21,16 @@ import Current from "./Cards/Current";
 
 function Education() {
     return ( 
-        <Frame windowName={"Education"}>
+        <Frame windowName={"Education"} id="education">
             <div className="education-container">
             <Timeline
                 sx={{
                     [`& .${timelineOppositeContentClasses.root}`]: {
                     flex: 0,
+                    padding: 0,
                     },
                     [`& .${timelineItemClasses.root}`]: {
-                        position: 'static',
+                        padding: 0,
                     }
                 }}
                 >

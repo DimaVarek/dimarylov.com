@@ -3,7 +3,16 @@ import './MenuModal.css'
 import { HashLink } from 'react-router-hash-link';
 
 function MenuModal({ closeMenu }) {
-    let closeWindow = () => {
+    let closeWindow = (key) => {
+        if (key) {
+          let top = document.getElementById(key).offsetTop;
+          window.scrollTo({
+              top: top,
+              left: 0,
+              behavior: "smooth",
+            });
+          
+        }
         closeMenu(false)
     }
     useEffect(() => {
@@ -22,26 +31,19 @@ function MenuModal({ closeMenu }) {
       }, []);
     return ( 
         <div className="menu-nodal-container">
-          <HashLink smooth to='/#home'>
-            <div className="menu-modal-item" onClick={closeWindow}>
+            <div className="menu-modal-item" onClick={() => closeWindow('home')}>
                 HOME
             </div>
-          </HashLink>
-          <HashLink smooth to='/#about'>
-            <div className="menu-modal-item" onClick={closeWindow}>
+            <div className="menu-modal-item" onClick={() => closeWindow('about')}>
                 ABOUT
             </div>
-          </HashLink>
-          <HashLink smooth to='/#projects'>
-            <div className="menu-modal-item" onClick={closeWindow}>
+            <div className="menu-modal-item" onClick={() => closeWindow('projects')}>
                 PROJECTS
             </div>
-          </HashLink>
-          <HashLink smooth to='/#contacts'>
-            <div className="menu-modal-item" onClick={closeWindow}>
+            <div className="menu-modal-item" onClick={() => closeWindow('contacts')}>
                 CONTACTS
             </div>
-          </HashLink>
+
         </div>
      );
 }
